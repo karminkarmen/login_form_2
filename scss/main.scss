@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+
+
+// Colors
+$background: #F7F7F7;
+$darkgray: #333333;
+$lightgray: lighten(#BDBDBD, 15%);
+$accent: #00BBFF;
+//#FFF200;
+
+// Mixins
+@mixin shadow {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.39);
+}
+
+@mixin headers {
+  color: $accent;
+  padding: 2rem;
+  text-align: center;
+  @include upper;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+@mixin upper ($spacing: 0.3rem) {
+  text-transform: uppercase;
+  letter-spacing: ($spacing);
+}
+
+@mixin margin {
+  margin: 1rem 0.15rem;
+}
+
+@mixin font {
+  font-size: 0.7rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', Sans-Serif;
+  font-size: 62.5%; /* 10px */
+  width: 100%;
+  height: 100vh;
+  background-color: $background;
+}
+
+.align {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// F R A M E - B A C K
+.frame-back {
+  background-color: $lightgray;
+  width: 50rem;
+  height: 20rem;
+  position: absolute;
+  z-index: 7;
+  border-left: 0.2rem solid $accent;
+  border-right: 0.2rem solid transparent;
+}
+
+.info {
+  box-sizing: border-box;
+  padding: 3.3rem 0;
+  background-color: transparent;
+  @include font;
+  text-align: center;
+  margin: 3rem 4.97rem;
+  width: 28%;
+  height: 10rem;
+}
+
+.signup-info {
+  float: left;
+}
+
+.login-info {
+  float: right;
+  z-index: 999;
+}
+
+p {
+  font-size: 1rem;
+}
+
+// F R A M E - F R O N T
+
+.frame-front {
+  background-color: $darkgray;
+  @include shadow;
+  margin: 10rem 0;
+  margin-left: 20rem;
+  width: 20rem;
+  height: 26rem;
+  z-index: 99999;
+  position: relative;
+  border-right: 0.2rem solid $accent;
+  box-sizing: border-box;
+  padding: 0 2rem;
+  transition: 0.5s ease;
+
+  &.left {
+    margin-left: -20rem;
+  }
+}
+
+
+h2 {
+  @include headers;
+  margin: 2.5rem 0 1.5rem 0;
+}
+
+input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  @include margin;
+  padding: 0.5rem;
+  background-color: $background;
+  outline: 0;
+  border: 0;
+  @include font;
+
+  &::placeholder {
+    color: $darkgray;
+  }
+
+  &:active, &:focus {
+    background-color: $background;
+    outline: 0.2rem solid $accent;
+    color: $darkgray;
+    border: none;
+    font-size: 0.7rem;
+  }
+}
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+  color: $background;
+}
+
+button {
+  width: 100%;
+  padding: 0.6rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  outline: 0;
+  @include margin;
+  font-size: 0.8rem;
+  @include upper(0.15rem);
+  background-color: $accent;
+  color: $background;
+
+  &:active, &:focus {
+    outline: 0;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+  display: none;
+}
+
+
+.toggle-button {
+  width: 100%;
+  height: 3rem;
+  font-weight: bold;
+  @include upper(0.2rem);
+  font-size: 1rem;
+  background-color: transparent;
+  color: $accent;
+}
+
+span {
+  @include upper(0.15rem);
+  font-weight: bold;
+}
