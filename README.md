@@ -2,6 +2,6 @@
 
 Project of login form, animeted in jquery.
 
-**Technologies: HTML, CSS, JQuery**
+**Technologies: HTML, CSS, jQuery**
 
 <a href="https://karminkarmen.github.io/login-form-2/">**LINK TO PREWIEV**</a>
